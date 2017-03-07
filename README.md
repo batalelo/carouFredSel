@@ -1,6 +1,6 @@
 carouFredSel
 ============
 
-A circular, responsive carousel plugin built using the jQuery. See http://caroufredsel.dev7studios.com
+A circular, responsive carousel plugin built using the jQuery.
 
-Docs: http://docs.dev7studios.com/category/11-caroufredsel
+Docs: https://insanio.github.io/carouFredSel-jQuery/
