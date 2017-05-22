@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="yandex-verification" content="3940d481e47b87e3" />
+
+  <title>carouFredSel: a circular, responsive jQuery carousel</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="stylesheet" href="/assets/syntax.css">
+
+  <!-- include jQuery + carouFredSel plugin -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript" language="javascript" src="../jquery.carouFredSel-6.2.1-packed.js"></script>
+
+  <!-- optionally include helper plugins -->
+  <script type="text/javascript" language="javascript" src="../helper-plugins/jquery.mousewheel.min.js"></script>
+  <script type="text/javascript" language="javascript" src="../helper-plugins/jquery.touchSwipe.min.js"></script>
+  <script type="text/javascript" language="javascript" src="../helper-plugins/jquery.transit.min.js"></script>
+  <script type="text/javascript" language="javascript" src="../helper-plugins/jquery.ba-throttle-debounce.min.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+      <h1>&nbsp;</h1>
+      <nav>
+        
+        <li class="active">
+          <a href="/">
+            Demo page
+          </a>
+        </li>
+        
+        <li class="">
+          <a href="/docs.html">
+            CarouFredSel docs
+          </a>
+        </li>
+        
+        <li class="">
+          <a href="/advanced.html">
+            CarouFredSel advanced options
+          </a>
+        </li>
+        
+        <li class="">
+          <a href="https://github.com/nzy/carouFredSel">
+            View project on GitHub.com
+          </a>
+        </li>
+        
+      </nav>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        				<h1>carouFredSel</h1>
+				<p>This is a demo page. More examples you can get <a href="http://coolcarousels.frebsite.nl/" target="_blank">here</a>.</p>
+				<div class="wrapper">
+					<p>Basic carousel.</p>
+					<div class="list_carousel">
+						<ul id="foo0">
+							<li>c</li>
+							<li>a</li>
+							<li>r</li>
+							<li>o</li>
+							<li>u</li>
+							<li>F</li>
+							<li>r</li>
+							<li>e</li>
+							<li>d</li>
+							<li>S</li>
+							<li>e</li>
+							<li>l</li>
+							<li> </li>
+						</ul>
+						<div class="clearfix"></div>
+					</div>
+					<br />
+					<p>Basic carousel + timer, using CSS-transitions.</p>
+					<div class="list_carousel">
+						<ul id="foo1">
+							<li>c</li>
+							<li>a</li>
+							<li>r</li>
+							<li>o</li>
+							<li>u</li>
+							<li>F</li>
+							<li>r</li>
+							<li>e</li>
+							<li>d</li>
+							<li>S</li>
+							<li>e</li>
+							<li>l</li>
+							<li> </li>
+						</ul>
+						<div class="clearfix"></div>
+						<div id="timer1" class="timer"></div>
+					</div>
+					<br />
+
+
+					<p>Carousel scrolled by user interaction.<br />
+						(prev-button, next-button, pagination, mousewheel and swipe)</p>
+					<div class="list_carousel">
+						<ul id="foo2">
+							<li>c</li>
+							<li>a</li>
+							<li>r</li>
+							<li>o</li>
+							<li>u</li>
+							<li>F</li>
+							<li>r</li>
+							<li>e</li>
+							<li>d</li>
+							<li>S</li>
+							<li>e</li>
+							<li>l</li>
+							<li> </li>
+						</ul>
+						<div class="clearfix"></div>
+						<a id="prev2" class="prev" href="#">&lt;</a>
+						<a id="next2" class="next" href="#">&gt;</a>
+						<div id="pager2" class="pager"></div>
+					</div>
+					<br /><br/>
+					<p>Carousel with a variable number of visible items with variable sizes.</p>
+					<div class="list_carousel">
+						<ul id="foo3">
+							<li style="width: 50px; height: 50px;">c</li>
+							<li style="width: 200px; height: 100px;">a</li>
+							<li style="width: 50px; height: 150px;">r</li>
+							<li style="width: 50px; height: 200px;">o</li>
+							<li style="width: 50px; height: 150px;">u</li>
+							<li style="width: 100px; height: 100px;">F</li>
+							<li style="width: 250px; height: 50px;">r</li>
+							<li style="width: 150px; height: 100px;">e</li>
+							<li style="width: 150px; height: 150px;">d</li>
+							<li style="width: 50px; height: 200px;">S</li>
+							<li style="width: 100px; height: 150px;">e</li>
+							<li style="width: 150px; height: 100px;">l</li>
+							<li style="width: 200px; height: 50px;"> </li>
+						</ul>
+						<div class="clearfix"></div>
+						<a id="prev3" class="prev" href="#">&lt;</a>
+						<a id="next3" class="next" href="#">&gt;</a>
+					</div>
+				</div>
+				<br />
+			</div>
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+				<p style="text-align: center;">Responsive layout example resizing the items (resize your browser).</p>
+				<div class="list_carousel responsive">
+					<ul id="foo4">
+						<li>c</li>
+						<li>a</li>
+						<li>r</li>
+						<li>o</li>
+						<li>u</li>
+						<li>F</li>
+						<li>r</li>
+						<li>e</li>
+						<li>d</li>
+						<li>S</li>
+						<li>e</li>
+						<li>l</li>
+						<li> </li>
+					</ul>
+					<div class="clearfix"></div>
+				</div>
+				<br />
+
+
+				<p style="text-align: center;">Responsive layout example centering the items (resize your browser).</p>
+				<div class="list_carousel responsive" >
+					<ul id="foo5">
+						<li style="width: 300px;">c</li>
+						<li style="width: 150px;">a</li>
+						<li>r</li>
+						<li style="width: 300px;">o</li>
+						<li style="width: 150px;">u</li>
+						<li>F</li>
+						<li style="width: 300px;">r</li>
+						<li style="width: 150px;">e</li>
+						<li>d</li>
+						<li style="width: 400px;">S</li>
+						<li style="width: 150px;">e</li>
+						<li>l</li>
+						<li> </li>
+					</ul>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+
+<!-- fire plugin onDocumentReady -->
+<script type="text/javascript" language="javascript">
+    $(function() {
+
+        //	Basic carousel, no options
+        $('#foo0').carouFredSel();
+
+        //	Basic carousel + timer, using CSS-transitions
+        $('#foo1').carouFredSel({
+            auto: {
+                pauseOnHover: 'resume',
+                progress: '#timer1'
+            }
+        }, {
+            transition: true
+        });
+
+        //	Scrolled by user interaction
+        $('#foo2').carouFredSel({
+            auto: false,
+            prev: '#prev2',
+            next: '#next2',
+            pagination: "#pager2",
+            mousewheel: true,
+            swipe: {
+                onMouse: true,
+                onTouch: true
+            }
+        });
+
+        //	Variable number of visible items with variable sizes
+        $('#foo3').carouFredSel({
+            width: 360,
+            height: 'auto',
+            prev: '#prev3',
+            next: '#next3',
+            auto: false
+        });
+
+        //	Responsive layout, resizing the items
+        $('#foo4').carouFredSel({
+            responsive: true,
+            width: '100%',
+            scroll: 2,
+            items: {
+                width: 400,
+                //	height: '30%',	//	optionally resize item-height
+                visible: {
+                    min: 2,
+                    max: 6
+                }
+            }
+        });
+
+        //	Fuild layout, centering the items
+        $('#foo5').carouFredSel({
+            width: '100%',
+            scroll: 2
+        });
+    });
+
+</script>
+
+    </div>
+  </div>
+</body>
+
+</html>

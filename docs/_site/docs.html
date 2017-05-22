@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="yandex-verification" content="3940d481e47b87e3" />
+
+  <title>carouFredSel: a circular, responsive jQuery carousel</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="stylesheet" href="/assets/syntax.css">
+
+  <!-- include jQuery + carouFredSel plugin -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript" language="javascript" src="../jquery.carouFredSel-6.2.1-packed.js"></script>
+
+  <!-- optionally include helper plugins -->
+  <script type="text/javascript" language="javascript" src="../helper-plugins/jquery.mousewheel.min.js"></script>
+  <script type="text/javascript" language="javascript" src="../helper-plugins/jquery.touchSwipe.min.js"></script>
+  <script type="text/javascript" language="javascript" src="../helper-plugins/jquery.transit.min.js"></script>
+  <script type="text/javascript" language="javascript" src="../helper-plugins/jquery.ba-throttle-debounce.min.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+      <h1>&nbsp;</h1>
+      <nav>
+        
+        <li class="">
+          <a href="/">
+            Demo page
+          </a>
+        </li>
+        
+        <li class="active">
+          <a href="/docs.html">
+            CarouFredSel docs
+          </a>
+        </li>
+        
+        <li class="">
+          <a href="/advanced.html">
+            CarouFredSel advanced options
+          </a>
+        </li>
+        
+        <li class="">
+          <a href="https://github.com/nzy/carouFredSel">
+            View project on GitHub.com
+          </a>
+        </li>
+        
+      </nav>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+        	<h1>carouFredSel docs</h1>
+
+	<h2>Install files</h2>
+	<p>Installing the carouFredSel jQuery plugin is actually pretty simple. You just need to add the Following code to the
+		<code>&lt;head&gt;</code> of your web page:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jquery.carouFredSel.js"</span> <span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre></figure>
+
+
+	<p>This will make sure all the required files are loaded properly. If you have the carouFredSel CSS and Javascript
+	files in a subfolder you will need to add it to the path. Note that the carouFredSel jQuery plugin requires jQuery v1.7+ to work.</p>
+	<h2>Add markup</h2>
+	<p>The HTML markup for carouFredSel is also very simple. You simply need to create a div with an id (<code>#carousel</code> in this case)
+		and add some content to it:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"carousel"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"img1.jpg"</span> <span class="na">width=</span><span class="s">"300"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"img2.jpg"</span> <span class="na">width=</span><span class="s">"300"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"img3.jpg"</span> <span class="na">width=</span><span class="s">"300"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"img4.jpg"</span> <span class="na">width=</span><span class="s">"300"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+
+	<p>The content can be whatever you want, including HTML. For example:</p>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"carousel"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+        <span class="nt">&lt;h3&gt;</span>Infinity<span class="nt">&lt;/h3&gt;</span>
+        <span class="nt">&lt;p&gt;</span>A concept that in many fields refers to a quantity without bound or end.<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+        <span class="nt">&lt;h3&gt;</span>Circular journey<span class="nt">&lt;/h3&gt;</span>
+        <span class="nt">&lt;p&gt;</span>An excursion in which the final destination is the same as the starting point.<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+        <span class="nt">&lt;h3&gt;</span>jQuery<span class="nt">&lt;/h3&gt;</span>
+       <span class="nt">&lt;p&gt;</span>jQuery  is a cross-browser JavaScript library designed to simplify the client-side scripting.<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+	<h2>Hook up the carousel</h2>
+	<p>Finally you need to hook up the carousel by adding the following code after the three links we included in the <code>&lt;head&gt;</code>:</p>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Using default configuration</span>
+    <span class="nx">$</span><span class="p">(</span><span class="err">#</span><span class="nx">carousel</span><span class="p">).</span><span class="nx">carouFredSel</span><span class="p">();</span>
+
+    <span class="c1">// Using custom configuration</span>
+    <span class="nx">$</span><span class="p">(</span><span class="err">#</span><span class="nx">carousel</span><span class="p">).</span><span class="nx">carouFredSel</span><span class="p">({</span>
+        <span class="na">items</span>     <span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="na">direction</span> <span class="p">:</span> <span class="s2">"up"</span><span class="p">,</span>
+        <span class="na">scroll</span> <span class="p">:</span> <span class="p">{</span>
+            <span class="na">items</span>         <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="na">easing</span>        <span class="p">:</span> <span class="s2">"elastic"</span><span class="p">,</span>
+            <span class="na">duration</span>      <span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+            <span class="na">pauseOnHover</span>  <span class="p">:</span> <span class="kc">true</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
+
+	<p>Note: After the plugin has been executed, the container-element has been wrapped inside a div-element with the class <code>caroufredsel_wrapper</code>.</p>
+
+	<h2>Play with settings</h2>
+	<p>carouFredSel has plenty of settings to fiddle with. Below is an example of the code with all available options and their defaults:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="err">#</span><span class="nx">carousel</span><span class="p">).</span><span class="nx">carouFredSel</span><span class="p">({</span>
+    <span class="na">circular</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>    <span class="c1">// Determines whether the carousel should be circular.</span>
+    <span class="na">infinite</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>    <span class="c1">// Determines whether the carousel should be infinite. Note: It is possible to create a non-circular, infinite carousel, but it is not possible to create a circular, non-infinite carousel.</span>
+    <span class="na">responsive</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="c1">// Determines whether the carousel should be responsive. If true, the items will be resized to fill the carousel.</span>
+    <span class="na">direction</span><span class="p">:</span> <span class="s2">"left"</span><span class="p">,</span> <span class="c1">// The direction to scroll the carousel. Possible values: "right", "left", "up" or "down".</span>
+    <span class="na">width</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>       <span class="c1">// The width of the carousel. Can be null (width will be calculated), a number, "variable" (automatically resize the carousel when scrolling items with variable widths), "auto" (measure the widest item) or a percentage like "100%" (only applies on horizontal carousels)</span>
+    <span class="na">height</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>      <span class="c1">// The height of the carousel. Can be null (width will be calculated), a number, "variable" (automatically resize the carousel when scrolling items with variable heights), "auto" (measure the tallest item) or a percentage like "100%" (only applies on vertical carousels)</span>
+    <span class="na">align</span><span class="p">:</span> <span class="s2">"center"</span><span class="p">,</span>   <span class="c1">// Whether and how to align the items inside a fixed width/height. Possible values: "center", "left", "right" or false.</span>
+    <span class="na">padding</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>     <span class="c1">// Padding around the carousel (top, right, bottom and left). For example: [10, 20, 30, 40] (top, right, bottom, left) or [0, 50] (top/bottom, left/right).</span>
+    <span class="na">synchronise</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span> <span class="c1">// Selector and options for the carousel to synchronise: [string selector, boolean inheritOptions, boolean sameDirection, number deviation] For example: ["#foo2", true, true, 0]</span>
+    <span class="na">cookie</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>     <span class="c1">// Determines whether the carousel should start at its last viewed position. The cookie is stored until the browser is closed. Can be a string to set a specific name for the cookie to prevent multiple carousels from using the same cookie.</span>
+    <span class="na">onCreate</span><span class="p">:</span> <span class="kc">null</span>     <span class="c1">// Function that will be called after the carousel has been created. Receives a map of all data.</span>
+<span class="p">});</span></code></pre></figure>
+
+	<p>Note: In all callback functions, <code>this</code> refers to the HTML-element of the carousel, except for the <code>auto.progress.updater</code> callback function, where it refers to the HTML-element of <code>auto.progress.bar</code> and the <code>pagination.anchorBuilder</code> callback function, where it refers to the HTML-element of the current item.</p>
+	<h2>Advanced configuration</h2>
+	<p>See the <a href="/options.html">carouFredSel Advanced configuration</a> page.</p>
+	<h2>Options for the plugin</h2>
+	<p>After the configuration-object, a second object can be passed to the method containing options for the plugin itself.</p>
+	<table cellpadding="0" cellspacing="0" border="0" class="table">
+		<thead>
+		<tr>
+			<td></td>
+			<td>Option</td>
+			<td>Default value</td>
+			<td>Datatype</td>
+			<td>Description</td>
+		</tr>
+		</thead>
+		<tbody>
+		<tr class="new_item">
+			<td></td>
+			<td>debug</td>
+			<td><code>false</code></td>
+			<td class="italic">Boolean</td>
+			<td>Determines whether to log debugging information to the console.</td>
+		</tr>
+		<tr class="new_item even">
+			<td></td>
+			<td>transition</td>
+			<td><code>false</code></td>
+			<td class="italic">Boolean</td>
+			<td>Determines whether to use CSS3 transitions instead of javascript animations.
+				<p class="alert">To enable this feature, youll need to include the <a href="https://web.archive.org/web/20150227050714/http://ricostacruz.com/jquery.transit/" target="_blank">jQuery.transit-plugin</a>.</p></td>
+		</tr>
+		<tr class="new_item">
+			<td></td>
+			<td>onWindowResize</td>
+			<td><code>throttle</code></td>
+			<td class="italic">String</td>
+			<td>Enter <code>"throttle"</code> to use the throttle-plugin to rate-limit the carousel updating onWindowResize. Or <code>"debounce"</code> to use the debounce-plugin.
+				<p class="alert">To enable this feature, youll need to include the <a href="https://web.archive.org/web/20150227050714/http://benalman.com/projects/jquery-throttle-debounce-plugin/" target="_blank">jQuery.throttle-debounce-plugin</a>.</p></td>
+		</tr>
+		<tr class="new_item closed even">
+			<td colspan="3" style="cursor: pointer;">wrapper</td>
+			<td class="italic">Object</td>
+			<td>A map of the configuration for the wrapper: <code>element</code> and <code>classname</code>.</td>
+		</tr>
+		<tr id="wrapper_object" class="wrapper_object no_border even">
+			<td colspan="5">{</td>
+		</tr>
+		<tr class="wrapper_object no_border even">
+			<td></td>
+			<td>element</td>
+			<td><code>"div"</code></td>
+			<td class="italic">String</td>
+			<td>Type of DOM-element to create for the wrapper.</td>
+		</tr>
+		<tr class="wrapper_object no_border even">
+			<td></td>
+			<td>classname</td>
+			<td><code>"caroufredsel_wrapper"</code></td>
+			<td class="italic">String</td>
+			<td>The classname to use for the wrapper.</td>
+		</tr>
+		<tr class="wrapper_object no_border even">
+			<td colspan="5">}</td>
+		</tr>
+		<tr class="even">
+			<td colspan="3" class="no_border"></td>
+			<td class="italic">String</td>
+			<td>Enter <code>"parent"</code> to use the parent element as the carousel-wrapper.</td>
+		</tr>
+		<!-- /wrapper_object -->
+
+		<tr class="new_item closed">
+			<td colspan="3" style="cursor: pointer;">events</td>
+			<td class="italic">Object</td>
+			<td>A map of the configuration for the events: <code>prefix</code> and <code>namespace</code>.</td>
+		</tr>
+		<tr id="events_object" class="events_object no_border">
+			<td colspan="5">{</td>
+		</tr>
+		<tr class="events_object no_border">
+			<td></td>
+			<td>prefix</td>
+			<td><code>""</code></td>
+			<td class="italic">String</td>
+			<td>Prefix for all events.</td>
+		</tr>
+		<tr class="events_object no_border">
+			<td></td>
+			<td>namespace</td>
+			<td><code>"cfs"</code></td>
+			<td class="italic">String</td>
+			<td>Namespace for all events.</td>
+		</tr>
+		<tr class="events_object no_border">
+			<td colspan="5">}</td>
+		</tr>
+		<!-- /events_object -->
+
+		<tr class="new_item closed even">
+			<td colspan="3" style="cursor: pointer;">classnames</td>
+			<td class="italic">Object</td>
+			<td>A map of the configuration for the classnames: <code>selected</code>, <code>hidden</code> and <code>disabled</code>.</td>
+		</tr>
+		<tr id="classnames_object" class="classnames_object no_border even">
+			<td colspan="5">{</td>
+		</tr>
+		<tr class="classnames_object no_border even">
+			<td></td>
+			<td>selected</td>
+			<td><code>"selected"</code></td>
+			<td class="italic">String</td>
+			<td>Classname for the selected pagination anchor.</td>
+		</tr>
+		<tr class="classnames_object no_border even">
+			<td></td>
+			<td>hidden</td>
+			<td><code>"hidden"</code></td>
+			<td class="italic">String</td>
+			<td>Classname for the hidden navigational buttons.</td>
+		</tr>
+		<tr class="classnames_object no_border even">
+			<td></td>
+			<td>disabled</td>
+			<td><code>"disabled"</code></td>
+			<td class="italic">String</td>
+			<td>Classname for the disabled navigational buttons.</td>
+		</tr>
+		<tr class="classnames_object no_border even">
+			<td></td>
+			<td>paused</td>
+			<td><code>"paused"</code></td>
+			<td class="italic">String</td>
+			<td>Classname for the play-button if the carousel is paused.</td>
+		</tr>
+		<tr class="classnames_object no_border even">
+			<td></td>
+			<td>stopped</td>
+			<td><code>"stopped"</code></td>
+			<td class="italic">String</td>
+			<td>Classname for the play-button if the carousel is stopped.</td>
+		</tr>
+		<tr class="classnames_object no_border even">
+			<td colspan="5">}</td>
+		</tr>
+		<!-- /classnames_object -->
+
+		</tbody>
+	</table>
+
+	<h2 id="use-block-elements-that-float-left">Use block elements that float left</h2>
+	<p>To ensure the plugin is able to measure the correct sizes, always use <code>display: block;</code> for the items. In a horizontal carousel, you should also make the items <code>float: left;</code>.</p>
+	<h2 id="preventing-f-o-u-c-">Preventing F.O.U.C.</h2>
+	<p>When using the carouFredSel plugin, you may see a Flash Of Unstyled Content (F.O.U.C.). This is because the browser may render elements before the DOM is fully loaded and before the DOMContentLoaded event is fired. Fortunately it can be prevented, pretty easy actually. Simply apply something like the following CSS to your HTML element.</p>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="err">#</span><span class="nx">carousel</span> <span class="p">{</span>              <span class="cm">/*    the HTML element that will be turned into a carousel */</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="mi">870</span><span class="nx">px</span><span class="p">;</span>        <span class="cm">/*    depending on your situation */</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="mi">175</span><span class="nx">px</span><span class="p">;</span>       <span class="cm">/*    depending on your situation */</span>
+    <span class="nl">overflow</span><span class="p">:</span> <span class="nx">hidden</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+    </div>
+  </div>
+</body>
+
+</html>
