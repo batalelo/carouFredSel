@@ -1,0 +1,11 @@
+- text: Demo page
+  url: /
+
+- text: CarouFredSel docs
+  url: /docs.html
+
+- text: CarouFredSel advanced options
+  url: /advanced.html
+
+- text: View project on GitHub.com
+  url: https://github.com/nzy/carouFredSel
